@@ -55,9 +55,6 @@ F. C. Coelho et al., Full dataset for dengue forecasting in Brazil for Infodengu
 ## How to Cite This Repository
 If you wish to cite this repository in a document, please use the following reference:
 
-D-FENSE: Dynamics for Epidemic Surveillance and Evaluation, GitHub repository, 2024, https://github.com/americocunhajr/D-FENSE
-In BibTeX format:
-
 @misc{D-FENSE-GitHub,
    author       = {Das {H.K.}  Stolerman L. M.,
    title        = {{DS_OKSTATE_2025}: {D}engue {F}orecasting in {B}razil},
