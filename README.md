@@ -40,14 +40,13 @@ Our hierarchical training algorithm uses an expanding window approach to sequent
 ## Data Sources and Preprocessing
 We leverage multiple datasets including: epidemiological case counts from Infodengue, climate reanalysis data from ERA5 via Mosqlimate, and environmental and demographic data from IBGE and Embrapa. Data is aggregated by epidemiological week and municipality, with careful preprocessing to synchronize temporal and spatial resolutions for model input.
 
-## Forecast Evaluation and Validation
-Model forecasts are rigorously validated across multiple seasonal windows, including out-of-sample predictions for the 2022–2023, 2023–2024, 2024–2025 seasons, as well as the final forecast for the 2025–2026 dengue season. Performance metrics such as RMSE, Mean Absolute Error (MAE), and correlation with observed cases guide model refinement and ensemble weighting.
-
-
-## Data Source
 The raw data used in this repository is sourced from:
 
 F. C. Coelho et al., Full dataset for dengue forecasting in Brazil for Infodengue-Mosqlimate sprint 2024, https://zenodo.org/records/13328231
+
+## Forecast Evaluation and Validation
+Model forecasts are rigorously validated across multiple seasonal windows, including out-of-sample predictions for the 2022–2023, 2023–2024, 2024–2025 seasons, as well as the final forecast for the 2025–2026 dengue season. Performance metrics such as RMSE, Mean Absolute Error (MAE), and correlation with observed cases guide model refinement and ensemble weighting.
+
 
 ## How to Cite This Repository
 If you wish to cite this repository in a document, please use the following reference:
