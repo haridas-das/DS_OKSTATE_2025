@@ -8,21 +8,22 @@ DS-OKSTATE conducts research aimed at understanding and mitigating Dengue Virus 
 
 # Participants:
 • Haridas K. Das, Oklahoma State University, Stillwater, USA
+
 • Lucas M. Stolerman, Oklahoma State University, Stillwater, USA
 
 ## Methodology / Approach of the Model
 
-For the **2025 Dengue Forecast Sprint**, aimed at predictive modeling of dengue in Brazil, we will use the hybrid deep learning framework based on a \textbf{Convolutional Neural Network–Long Short-Term Memory (CNN-LSTM)} architecture. In the \emph{2024 Infodengue Sprint}, we implemented the same hybrid CNN-LSTM model trained solely on epidemiological data for long-term forecasting, following the procedure described in Algorithm~\ref{alg:hierarchical_training}.  
+For the **2025 Dengue Forecast Sprint**, aimed at predictive modeling of dengue in Brazil, we will use the hybrid deep learning framework based on a **Convolutional Neural Network–Long Short-Term Memory (CNN-LSTM)** architecture. In the **2024 Infodengue Sprint**, we implemented the same hybrid CNN-LSTM model trained solely on epidemiological data for long-term forecasting, following the procedure described in Algorithm ~\ref{alg:hierarchical_training}.  
 
-One key limitation identified in the existing literature is the lack of integration of climate data into long-term dengue forecasting models. To address this gap, our approach incorporates multivariate time series data that combines the \textit{epidemiological week of dengue symptom onset} with relevant \textit{climate-related variables}, enabling a more comprehensive and robust prediction framework.
+One key limitation identified in the existing literature is the lack of integration of climate data into long-term dengue forecasting models. To address this gap, our approach incorporates multivariate time series data that combines the **epidemiological week of dengue symptom onset** with relevant **climate-related variablesa**, enabling a more comprehensive and robust prediction framework.
 
-In this hybrid model, the \textbf{CNN} component is responsible for extracting spatial and temporal features from the input sequences. These extracted features are then passed to the \textbf{LSTM} layers, which are designed to capture long-term dependencies in dengue transmission patterns informed by the data (e.g. epidemiological and climatic data).
+In this hybrid model, the **CNN** component is responsible for extracting spatial and temporal features from the input sequences. These extracted features are then passed to the **LSTM** layers, which are designed to capture long-term dependencies in dengue transmission patterns informed by the data (e.g. epidemiological and climatic data).
 
 
 
 ## Convolutional Neural Network - Long Short-Term Memory (CNN-LSTM) model
 
-This is a deep neural network model composed of CNN layers, followed by LSTM layers, with a dense layer added to the output. In other words, after the CNN layers, the extracted features are passed to the LSTM layers -- an advanced, recurrent neural network (RNN) -- which utilize \emph{gates} as described by Hochreiter and Schmidhuber \cite{hochreiter1997long}. This hybrid architecture of CNN-LSTM is particularly effective for time-series forecasting, as it captures both short-term local trends and long-term dependencies, and was developed in the context of Mpox prediction \cite{DASHK2024}. The architecture is displayed in Fig \ref{fig:cnn_lstm_architecture} and detailed in Table \ref{table:cnn_lstm_architecture}. 
+This is a deep neural network model composed of CNN layers, followed by LSTM layers, with a dense layer added to the output. In other words, after the CNN layers, the extracted features are passed to the LSTM layers -- an advanced, recurrent neural network (RNN) -- which utilize **gates** as described by Hochreiter and Schmidhuber \cite{hochreiter1997long}. This hybrid architecture of CNN-LSTM is particularly effective for time-series forecasting, as it captures both short-term local trends and long-term dependencies, and was developed in the context of Mpox prediction (DASHK2024). The architecture is displayed in the following Fig. (fig:cnn_lstm_architecture). 
 
 <p align="center">
   <img src="img/Fig cnn_lstm_architecture.pdf" alt="Sprint Planning" width="400" height="400">
