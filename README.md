@@ -17,13 +17,9 @@ For the **2025 Dengue Forecast Sprint**, aimed at predictive modeling of dengue 
 
 One key limitation identified in the existing literature is the lack of integration of climate data into long-term dengue forecasting models. To address this gap, our approach incorporates multivariate time series data that combines the **epidemiological week of dengue symptom onset** with relevant **climate-related variablesa**, enabling a more comprehensive and robust prediction framework.
 
-In this hybrid model, the **CNN** component is responsible for extracting spatial and temporal features from the input sequences. These extracted features are then passed to the **LSTM** layers, which are designed to capture long-term dependencies in dengue transmission patterns informed by the data (e.g. epidemiological and climatic data).
-
-
-
 ## Convolutional Neural Network - Long Short-Term Memory (CNN-LSTM) model
+In this hybrid model, the **CNN** component is responsible for extracting features from the input sequences. These extracted features are then passed to the **LSTM layers**, which are designed to capture long-term dependencies in dengue transmission patterns informed by the data (e.g. epidemiological and climatic data). In the 2024 Infodengue Sprint, we applied this model using only epidemiological data. For the 2025 Sprint, we aim to enhance the model by incorporating climate variables.
 
-This is a deep neural network model composed of CNN layers, followed by LSTM layers, with a dense layer added to the output. In other words, after the CNN layers, the extracted features are passed to the LSTM layers -- an advanced, recurrent neural network (RNN) -- which utilize **gates** as described by Hochreiter and Schmidhuber \cite{hochreiter1997long}. This hybrid architecture of CNN-LSTM is particularly effective for time-series forecasting, as it captures both short-term local trends and long-term dependencies, and was developed in the context of Mpox prediction (DASHK2024). The architecture is displayed in the following Fig. (fig:cnn_lstm_architecture). 
 
 <p align="center">
   <img src="img/Fig cnn_lstm_architecture.pdf" alt="Sprint Planning" width="400" height="400">
