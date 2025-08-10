@@ -32,8 +32,6 @@ To improve forecasting accuracy, we employ an ensemble of CNN-LSTM models traine
 ## Incorporation of Climate Variables
 Unlike many existing dengue forecasting efforts, our model explicitly integrates climate variables such as temperature, precipitation, humidity, and atmospheric pressure. These variables are known drivers of mosquito population dynamics and dengue transmission, providing additional predictive power when combined with epidemiological data.
 
-## Results
-
 ## Expanding Window Training Strategy
 Our hierarchical training algorithm uses an expanding window approach to sequentially update the model as new weekly data becomes available. This technique allows the model to adapt dynamically to evolving epidemic trends and improves long-term forecasting performance by continuously refining residuals from previous predictions.
 
@@ -44,8 +42,10 @@ The raw data used in this repository is sourced from:
 
 F. C. Coelho et al., Full dataset for dengue forecasting in Brazil for Infodengue-Mosqlimate sprint 2024, https://zenodo.org/records/13328231
 
+## Results
+
 ## Forecast Evaluation and Validation
-Model forecasts are rigorously validated across multiple seasonal windows, including out-of-sample predictions for the 2022–2023, 2023–2024, 2024–2025 seasons, as well as the final forecast for the 2025–2026 dengue season. Performance metrics such as RMSE, Mean Absolute Error (MAE), and correlation with observed cases guide model refinement and ensemble weighting.
+We applied our model to generate dengue incidence forecasts for all 27 Brazilian federative units for the 2025–2026 season, covering Epidemiological Weeks (EW) 41 to 40. The forecasts include median estimates along with 50%, 80%, 90%, and 95% predictive intervals, capturing key temporal trends and regional variations. Model validation was rigorously performed through out-of-sample predictions for the 2022–2023, 2023–2024, and 2024–2025 seasons, producing dengue case curves by EW 41 to 40 with corresponding median and predictive intervals. Performance metrics—such as Root Mean Square Error (RMSE), Mean Absolute Error (MAE), and correlation with observed cases—were used to refine the model and optimize ensemble weighting.
 
 
 ## How to Cite This Repository
