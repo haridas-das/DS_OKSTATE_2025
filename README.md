@@ -11,7 +11,7 @@ DS-OKSTATE conducts research aimed at understanding and mitigating Dengue Virus 
 
 • Lucas M. Stolerman, Oklahoma State University, Stillwater, USA
 
-## Methodology / Approach of the Model
+## Methodology 
 
 For the **2025 Dengue Forecast Sprint**, aimed at predictive modeling of dengue in Brazil, we will use the hybrid deep learning framework based on a **Convolutional Neural Network–Long Short-Term Memory (CNN-LSTM)** architecture. In the **2024 Infodengue Sprint**, we implemented the same hybrid CNN-LSTM model trained solely on epidemiological data for long-term forecasting, following the procedure described in Algorithm ~\ref{alg:hierarchical_training}.  
 
