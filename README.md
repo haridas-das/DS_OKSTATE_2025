@@ -22,7 +22,7 @@ In this hybrid model, the **CNN** component is responsible for extracting featur
 
 
 <p align="center">
-  <img src="img/Fig cnn_lstm_architecture.pdf" alt="Sprint Planning" width="400" height="400">
+  <img src="img/Fig cnn_lstm_architecture.png" alt="Sprint Planning" width="400" height="400">
 </p>
  
 
