@@ -36,7 +36,7 @@ Unlike many existing dengue forecasting efforts, our model explicitly integrates
 Our hierarchical training algorithm uses an expanding window approach to sequentially update the model as new weekly data becomes available. This technique allows the model to adapt dynamically to evolving epidemic trends and improves long-term forecasting performance by continuously refining residuals from previous predictions.
 
 ## Data Sources and Preprocessing
-We leverage multiple datasets including: epidemiological case counts from Infodengue, climate reanalysis data from ERA5 via Mosqlimate, and environmental and demographic data from IBGE and Embrapa. Data is aggregated by epidemiological week and municipality, with careful preprocessing to synchronize temporal and spatial resolutions for model input.
+We leverage multiple datasets, including epidemiological case counts from Infodengue, climate reanalysis data from ERA5 via Mosqlimate, and environmental and demographic data from IBGE and Embrapa. Data is aggregated by epidemiological week and municipality, with careful preprocessing to synchronize temporal and spatial resolutions for model input.
 
 The raw data used in this repository is sourced from:
 
@@ -44,9 +44,27 @@ F. C. Coelho et al., Full dataset for dengue forecasting in Brazil for Infodengu
 
 ## Results
 
-## Forecast Evaluation and Validation
-We applied our model to generate dengue incidence forecasts for all 27 Brazilian federative units for the 2025–2026 season, covering Epidemiological Weeks (EW) 41 to 40. The forecasts include median estimates along with 50%, 80%, 90%, and 95% predictive intervals, capturing key temporal trends and regional variations. Model validation was rigorously performed through out-of-sample predictions for the 2022–2023, 2023–2024, and 2024–2025 seasons, producing dengue case curves by EW 41 to 40 with corresponding median and predictive intervals. Performance metrics—such as Root Mean Square Error (RMSE), Mean Absolute Error (MAE), and correlation with observed cases—were used to refine the model and optimize ensemble weighting.
+The challenge had two test goals and a forecast goal, described below.
 
+Validation test 1. Predict the weekly number of dengue cases by state (UF) in the 2022-2023 season [EW 41 2022- EW40 2023], using data covering the period from EW 01 2010 to EW 25 2022;
+
+Validation test 2. Predict the weekly number of dengue cases by state (UF) in the 2023-2024 season [EW 41 2023- EW40 2024], using data covering the period from EW 01 2010 to EW 25 2023;
+
+Validation test 3. Predict the weekly number of dengue cases in Brazil, and by state (UF), in the 2024-2025 season [EW 41 2024- EW40 2025], using data covering the period from EW 01 2010 to EW 25 2024;
+
+Forecast target. Predict the weekly number of dengue cases in Brazil, and by state (UF), in the 2025-2026 season [EW 41 2025- EW40 2026], using data covering the period from EW 01 2010 to EW 25 2025;
+
+## Forecast Evaluation and Validation
+We used our model to generate dengue incidence forecasts for all 27 Brazilian federative units for the 2025–2026 season, covering Epidemiological Weeks (EW) 40 to 41, using only data up to EW 25 in that year. In other words, model training uses only data up to epidemiological week (EW) 25 of each target year, starting from EW 01, 2010, as input to generate forecasts from EW 41 of the target year through EW 40 of the following year, following the sprint’s guidelines. Model validation was rigorously performed through out-of-sample predictions for the 2022–2023, 2023–2024, and 2024–2025 seasons, producing dengue case curves by EW 41 to 40 with corresponding median and predictive intervals. Performance metrics—such as Root Mean Square Error (RMSE), Mean Absolute Error (MAE), and correlation with observed cases—were used to refine the model and optimize ensemble weighting. The forecasts include median estimates along with 50%, 80%, 90%, and 95% predictive intervals, as detailed below.  
+
+## Prediction intervals 
+After training the hierarchical expanding-window model at each level, we computed residuals from the previous training period, covering EW 01, 2010, to EW 25 of the target forecast year. We then estimated the standard deviation of these residuals and multiplied it by the standard normal z-scores corresponding to each desired coverage level (50%, 80%, 90%, and 95%) to obtain symmetric ranges around the forecasts. These ranges were added to and subtracted from the forecast values to form the upper and lower bounds of each interval. Finally, any negative lower bounds were set to zero to ensure all predicted case counts remained non-negative.
+
+## Code organization
+The GO_2025_IMDC_hybrid_CNN_LSTM_Cases_and_Climate_Data_Driven_Forecasting_Final_Submission.ipynb file contains the code used in this study and is located within the model folders. Moreover, the desired epidemiological weekly case data and climate data within the model folder are organized by state name (UF) for easy selection and use in the forecasting process.
+
+## Reproducibility
+To reproduce the results, use the code provided in the model folder. Then, select the state name (UF) corresponding to the desired epidemiological weekly case data and climate data.
 
 ## How to Cite This Repository
 If you wish to cite this repository in a document, please use the following reference:
