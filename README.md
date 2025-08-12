@@ -16,7 +16,7 @@ DS-OKSTATE conducts research aimed at understanding and mitigating Dengue Virus 
 For the **2025 Dengue Forecast Sprint**, aimed at predictive modeling of dengue in Brazil, we will use the hybrid deep learning framework based on a **Convolutional Neural Network–Long Short-Term Memory (CNN-LSTM)** architecture. In the **2024 Infodengue Sprint**, we implemented the same hybrid CNN-LSTM model trained solely on epidemiological data for long-term forecasting, following the procedure described in the following Algorithm. 
 
 <p align="center">
-  <img src="img/Algorithm1.png" alt="Sprint Planning" width="400" height="1000">
+  <img src="img/Algorithm1.png" alt="Sprint Planning" width="500" height="1500">
 </p>
 
 One key limitation identified in the existing literature is the lack of integration of climate data into long-term dengue forecasting models. To address this gap, our approach incorporates multivariate time series data that combines the **epidemiological week (EW) of dengue symptom onset** with relevant **climate-related variables**, enabling a more comprehensive and robust prediction framework.
@@ -26,7 +26,7 @@ In this hybrid model, the **CNN** component is responsible for extracting featur
 
 
 <p align="center">
-  <img src="img/Fig cnn_lstm_architecture.png" alt="Sprint Planning" width="400" height="1000">
+  <img src="img/Fig cnn_lstm_architecture.png" alt="Sprint Planning" width="500" height="1500">
 </p>
  
 
