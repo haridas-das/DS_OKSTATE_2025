@@ -61,8 +61,14 @@ Forecast target. Predict the weekly number of dengue cases in Brazil, and by sta
 ## Sample results
 
 <p align="center">
-  <img src="img/GO_test_123_forecast.png" alt="Sprint Planning" width="400" height="1000">
+  <img src="img/GO_test_123_forecast.png" alt="Sprint Planning" width="1000" height="1500">
 </p>
+
+
+<p align="center">
+  <img src="img/compare_models.png" alt="Sprint Planning" width="1000" height="1500">
+</p>
+
 
 
 ## Forecast Evaluation and Validation
