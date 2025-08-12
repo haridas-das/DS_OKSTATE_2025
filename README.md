@@ -19,7 +19,7 @@ For the **2025 Dengue Forecast Sprint**, aimed at predictive modeling of dengue 
   <img src="img/Algorithm1.png" alt="Sprint Planning" width="400" height="1000">
 </p>
 
-One key limitation identified in the existing literature is the lack of integration of climate data into long-term dengue forecasting models. To address this gap, our approach incorporates multivariate time series data that combines the **epidemiological week of dengue symptom onset** with relevant **climate-related variables**, enabling a more comprehensive and robust prediction framework.
+One key limitation identified in the existing literature is the lack of integration of climate data into long-term dengue forecasting models. To address this gap, our approach incorporates multivariate time series data that combines the **epidemiological week (EW) of dengue symptom onset** with relevant **climate-related variables**, enabling a more comprehensive and robust prediction framework.
 
 ## Convolutional Neural Network - Long Short-Term Memory (CNN-LSTM) model
 In this hybrid model, the **CNN** component is responsible for extracting features from the input sequences. These extracted features are then passed to the **LSTM layers**, which are designed to capture long-term dependencies in dengue transmission patterns informed by the data (e.g. epidemiological and climatic data). In the 2024 Infodengue Sprint, we applied this model using only epidemiological data. For the 2025 Sprint, we aim to enhance the model by incorporating climate variables.
@@ -48,7 +48,7 @@ F. C. Coelho et al., Full dataset for dengue forecasting in Brazil for Infodengu
 
 ## Goals 
 
-The challenge had two test goals and a forecast goal, described below.
+The challenge had three test goals and a forecast goal, described below.
 
 Validation test 1. Predict the weekly number of dengue cases by state (UF) in the 2022-2023 season [EW 41 2022- EW40 2023], using data covering the period from EW 01 2010 to EW 25 2022;
 
@@ -59,7 +59,7 @@ Validation test 3. Predict the weekly number of dengue cases in Brazil, and by s
 Forecast target. Predict the weekly number of dengue cases in Brazil, and by state (UF), in the 2025-2026 season [EW 41 2025- EW40 2026], using data covering the period from EW 01 2010 to EW 25 2025;
 
 ## Forecast Evaluation and Validation
-We used our model to generate dengue incidence forecasts for all 27 Brazilian federative units for the 2025–2026 season, covering Epidemiological Weeks (EW) 40 to 41, using only data up to EW 25 in that year. In other words, model training uses only data up to epidemiological week (EW) 25 of each target year, starting from EW 01, 2010, as input to generate forecasts from EW 41 of the target year through EW 40 of the following year, following the sprint’s guidelines. Model validation was rigorously performed through out-of-sample predictions for the 2022–2023, 2023–2024, and 2024–2025 seasons, producing dengue case curves by EW 41 to 40 with corresponding median and predictive intervals. Performance metrics—such as Root Mean Square Error (RMSE), Mean Absolute Error (MAE), and correlation with observed cases—were used to refine the model and optimize ensemble weighting. The forecasts include median estimates along with 50%, 80%, 90%, and 95% predictive intervals, as detailed below.  
+We used our model to generate dengue incidence forecasts for all 27 Brazilian federative units for the 2025–2026 season, covering Epidemiological Weeks (EW) 41 to 40, using only data up to EW 25 in that year. In other words, model training uses only data up to epidemiological week (EW) 25 of each target year, starting from EW 01, 2010, as input to generate forecasts from EW 41 of the target year through EW 40 of the following year, following the sprint’s guidelines. Model validation was rigorously performed through out-of-sample predictions for the 2022–2023, 2023–2024, and 2024–2025 seasons, producing dengue case curves by EW 41 to 40 with corresponding median and predictive intervals. Performance metrics—such as Root Mean Square Error (RMSE), Mean Absolute Error (MAE), and correlation with observed cases—were used to refine the model and optimize ensemble weighting. The forecasts include median estimates along with 50%, 80%, 90%, and 95% predictive intervals, as detailed below.  
 
 ## Prediction intervals 
 After training the hierarchical expanding-window model at each level, we computed residuals from the previous training period, covering EW 01, 2010, to EW 25 of the target forecast year. We then estimated the standard deviation of these residuals multiplied by the standard normal z-scores corresponding to each desired coverage level (50%, 80%, 90%, and 95%) to obtain symmetric ranges around the forecasts. These ranges were added to and subtracted from the forecast values to form the upper and lower bounds of each interval. Finally, any negative lower bounds were set to zero to ensure all predicted case counts remained non-negative.
