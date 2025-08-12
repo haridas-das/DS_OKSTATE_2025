@@ -58,6 +58,13 @@ Validation test 3. Predict the weekly number of dengue cases in Brazil, and by s
 
 Forecast target. Predict the weekly number of dengue cases in Brazil, and by state (UF), in the 2025-2026 season [EW 41 2025- EW40 2026], using data covering the period from EW 01 2010 to EW 25 2025;
 
+## Sample results
+
+<p align="center">
+  <img src="img/GO_test_123_forecast.png" alt="Sprint Planning" width="400" height="1000">
+</p>
+
+
 ## Forecast Evaluation and Validation
 We used our model to generate dengue incidence forecasts for all 27 Brazilian federative units for the 2025–2026 season, covering Epidemiological Weeks (EW) 41 to 40, using only data up to EW 25 in that year. In other words, model training uses only data up to epidemiological week (EW) 25 of each target year, starting from EW 01, 2010, as input to generate forecasts from EW 41 of the target year through EW 40 of the following year, following the sprint’s guidelines. Model validation was rigorously performed through out-of-sample predictions for the 2022–2023, 2023–2024, and 2024–2025 seasons, producing dengue case curves by EW 41 to 40 with corresponding median and predictive intervals. Performance metrics—such as Root Mean Square Error (RMSE), Mean Absolute Error (MAE), and correlation with observed cases—were used to refine the model and optimize ensemble weighting. The forecasts include median estimates along with 50%, 80%, 90%, and 95% predictive intervals, as detailed below.  
 
